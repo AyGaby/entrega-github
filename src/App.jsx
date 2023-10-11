@@ -6,7 +6,7 @@ import UserItem from "./components/UserItem";
 import RepoItem from "./components/RepoItem";
 
 const API_BASE_URL = "https://api.github.com";
-const ACCESS_TOKEN = "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"; // Por seguridad, no debes exponer tu token. Considera usar variables de entorno.
+const ACCESS_TOKEN = "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"; // Por seguridad, no debes exponer tu token. Considera usar variables de entorno.
 
 function App() {
   const [query, setQuery] = useState("");
