@@ -1,75 +1,86 @@
 body {
-  background-color: rgb(93, 85, 85);
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: center;
-}
-
-p {
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  
+  min-height: 100vh;
+  overflow: auto;
 }
 
-h1,
-h4 {
-  text-align: center;
-  padding: 10px;
-  color: rgb(247, 110, 47);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.contenedor {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.contenedor img {
-  border-radius: 50%;
-  width: 140px;
-  padding: 30px;
-}
-
-input {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  border: none;
+.App {
+  background-color: white;
   padding: 20px;
-  border-radius: 10px;
-  background-color: #e2d9d9;
-  font-size: small;
-  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+.form-container {
+  width: 500px;
+  margin: auto;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  display: none;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 70%;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 button {
-  margin: 10px;
-  padding: 10px;
-  width: 130px;
-  font-size: 1.1em;
-  cursor: pointer;
-  background-color: #171717;
-  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ea9816;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-div {
-  display: flex;
-  align-items: center;
-  justify-content: end;
+button:hover {
+  background-color: #171515;
 }
 
-div,
-avatar {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: inherit;
+.results {
+  margin-top: 40px;
+}
+
+.result-item:hover {
+  background-color: #e0e0e0;
+}
+
+.details {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+img {
+  width: 30%;
+  max-width: 100px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
 }

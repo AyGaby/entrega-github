@@ -2,42 +2,92 @@ import { useState } from "react";
 import "./App.css";
 import logo from "./assets/logui.png";
 
+import UserItem from "./components/UserItem";
+import RepoItem from "./components/RepoItem";
+
+const API_BASE_URL = "https://api.github.com";
+const ACCESS_TOKEN = "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"; // Por seguridad, no debes exponer tu token. Considera usar variables de entorno.
+
 function App() {
-  const [search, setSearch] = useState("");
-  const [user, setUser] = useState(null);
-  const fetchUser = async () => {
+  const [query, setQuery] = useState("");
+
+  const [userResults, setUserResults] = useState([]);
+  const [repoResults, setRepoResults] = useState([]);
+
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const fetchData = async (endpoint) => {
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+      headers: {
+        Authorization: `Bearer ${ACCESS_TOKEN}`,
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`GitHub API request failed: ${response.statusText}`);
+    }
+    const body = await response.json();
+    console.log(body);
+    return body;
+  };
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
     try {
-      const response = await fetch(`https://api.github.com/users/${search}`);
-      const data = await response.json();
-      setUser(data);
+      const userData = await fetchData(`/search/users?q=${query}`);
+      const repoData = await fetchData(`/search/repositories?q=${query}`);
+
+      setUserResults(userData.items || []);
+      setRepoResults(repoData.items || []);
     } catch (error) {
-      console.log("error", error.message);
+      console.error("Error fetching data: ", error);
+      // Consider setting some state here to show an error message to the user.
     }
   };
 
-  return (
-    <div className="contenedor">
-      <div className="nav">
-        <img src={logo} />
-        <h1>Busca un repositorio</h1>
-      </div>
-      <div>
-        <input
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Ingresa el nombre del usuario"
-        />
-        <button onClick={fetchUser}>Buscar</button>
-      </div>
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+  };
 
-      <article>
-        {user && (
-          <div className="avatar">
-            <img src={user.avatar_url} alt="avatar" />
-            <h4>{user.login}</h4>
-            <p>{user.bio}</p>
-          </div>
-        )}
-      </article>
+  return (
+    <div className="App">
+      <div className="form-container">
+        <img src={logo} alt="Logo" />
+        <h1>Github Search</h1>
+        <form onSubmit={handleSearch}>
+          <input
+            type="text"
+            value={query}
+            onChange={handleInputChange}
+            placeholder="Enter username or repository name"
+          />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div className="results">
+        <h2>Users</h2>
+        {userResults.map((item) => (
+          <UserItem
+            key={item.id}
+            item={item}
+            onClick={() => setSelectedItem(item)}
+          />
+        ))}
+        <h2>Repositories</h2>
+        {repoResults.map((item) => (
+          <RepoItem
+            key={item.id}
+            item={item}
+            onClick={() => setSelectedItem(item)}
+          />
+        ))}
+      </div>
+      {!!selectedItem && (
+        <div className="details">
+          <h2>Details</h2>
+          <p>Full Name: {selectedItem?.login}</p>
+          <p>Score: {selectedItem?.score}</p>
+        </div>
+      )}
     </div>
   );
 }
