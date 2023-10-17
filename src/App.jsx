@@ -6,7 +6,6 @@ import UserItem from "./components/UserItem";
 import RepoItem from "./components/RepoItem";
 
 const API_BASE_URL = "https://api.github.com";
-const ACCESS_TOKEN = "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"; // Por seguridad, no debes exponer tu token. Considera usar variables de entorno.
 
 function App() {
   const [query, setQuery] = useState("");
@@ -17,11 +16,7 @@ function App() {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const fetchData = async (endpoint) => {
-    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
-      headers: {
-        Authorization: `Bearer ${ACCESS_TOKEN}`,
-      },
-    });
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, {});
     if (!response.ok) {
       throw new Error(`GitHub API request failed: ${response.statusText}`);
     }

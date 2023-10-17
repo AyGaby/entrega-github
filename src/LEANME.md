@@ -24,15 +24,11 @@ App.jsx:42 Error fetching data: Error: GitHub API request failed: at fetchData (
 
 ## Investigación:
 
-Tras investigar en línea y consultar con el Profesor Roberto, identifiqué que el problema estaba relacionado con la solicitud a la API de GitHub. El profesor sugirió que podría haber un problema en el manejo de Git, posiblemente causando una reversión a la versión anterior cada vez que intentaba hacer push.
+Tras investigar en línea y consultar con el Profesor Roberto, identifiqué que el problema estaba relacionado con el Token de GitHub.
 
 ## Solución Temporal:
 
-La única solución que encontré para hacer que la aplicación funcionara fue descargar un nuevo token de GitHub, reemplazar el anterior y reiniciar el servidor. Esto permitió que la aplicación funcionara correctamente, como se muestra en el video adjunto. Sin embargo, esta solución temporal no resuelve el problema subyacente de la reversión al intentar hacer push nuevamente.
-
-## Limitaciones y Próximos Pasos:
-
-A pesar de que la aplicación está funcional y he proporcionado evidencia en forma de este video, enfrento limitaciones de tiempo debido a la fecha límite de entrega. No he tenido el tiempo suficiente para investigar y resolver completamente el problema subyacente en el manejo de Git que está causando esta situación.
+Remover el Token.
 
 ## Agradecimientos:
 
