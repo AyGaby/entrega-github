@@ -46,7 +46,11 @@ function App() {
   return (
     <div className="App">
       <div className="form-container">
-        <img src={logo} alt="Logo" />
+        <div className="logo-container">
+          <div className="glitch-wrapper">
+            <img src={logo} alt="Logo" />
+          </div>
+        </div>
         <h1>Github Search</h1>
         <form onSubmit={handleSearch}>
           <input
