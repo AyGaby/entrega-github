@@ -8,8 +8,12 @@ const UserItem = ({ item, onClick }) => (
       className="avatar"
     />
     <h3>{item.login || "No Name"}</h3>
-    <p>Type: {item.type || "-"}</p>
+    <p>Type: {item.type || ""}</p>
     <p>Score: {item.score || 0}</p>
+    <p>id: {item.id || ""} </p>
+    <p>Name: {item.Name || ""}</p>
+    <p>avatar_url: {item.avatar || ""}</p>
+    <p>Description: {item.Description || ""}</p>
   </div>
 );
 

@@ -7,7 +7,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   overflow: auto;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   background-image: url("./assets/fondo.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -87,18 +87,26 @@ body {
 .App {
   filter: opacity(0.8);
   background-color: #909090;
-  padding: 20px;
+  padding: 30px;
   border-radius: 8px;
   box-shadow: 0px 1px 50px 20px rgba(88, 193, 214, 0.55);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-container {
   width: 500px;
-  margin: auto;
 }
+/* 
+p {
 
-h1 {
+} */
+
+h4 {
+  display: none;
+  font-size: x-large;
   color: black;
 }
 
@@ -107,16 +115,20 @@ h2 {
 }
 
 form {
-  margin-bottom: 20px;
+  padding: 20px 20px 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 input[type="text"] {
-  padding: 10px;
+  padding: 20px 20px 20px 20px;
   font-size: 16px;
-  width: 70%;
-  margin-right: 10px;
-  border: 1px solid #ccc;
+  width: 115%;
+  margin-right: 8px;
+  border: 2px solid #6d6fc1;
   border-radius: 4px;
+  font-family: "Poppins", sans-serif;
 }
 
 button {
@@ -128,6 +140,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   animation: animateBg 5s infinite;
+  font-family: "Poppins", sans-serif;
 }
 
 @keyframes animateBg {
