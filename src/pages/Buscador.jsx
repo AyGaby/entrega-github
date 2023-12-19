@@ -2,10 +2,10 @@ import { useState } from "react"; //useState de React. Gestiona el estado en com
 import logo from "../assets/logui.png";
 
 import UserItem from "../components/UserItem";
-import RepoItem from "../components/RepoItem";
+// import RepoItem from "../components/RepoItem";
 import { useNavigate } from "react-router-dom";
 
-const API_BASE_URL = "https://api.github.com";
+const API_BASE_URL = "http://localhost:3000/api/v1"; // https://api.github.com esto es lo viejo (conectado FRONT CON END?) http://localhost3000/api/v1
 
 const Buscador = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Buscador = () => {
 
   // Estados para almacenar resultados de usuarios y repositorio.
   const [userResults, setUserResults] = useState([]);
-  const [repoResults, setRepoResults] = useState([]);
+  // const [repoResults, setRepoResults] = useState([]);
   // Estado para almacenar el elemento seleccionado
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -32,11 +32,15 @@ const Buscador = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const userData = await fetchData(`/search/users?q=${query}`);
-      const repoData = await fetchData(`/search/repositories?q=${query}`);
+      // const userData = await fetchData(`/users`);
+      // const repoData = await fetchData(`/search/repositories?q=${query}`);
 
-      setUserResults(userData.items || []);
-      setRepoResults(repoData.items || []);
+      const userData = await fetchData(`/users?q=${query}`);
+
+      console.log(userData);
+
+      setUserResults(userData.result.users || []);
+      // setRepoResults(repoData.items || []);
     } catch (error) {
       console.error("Error fetching data: ", error);
     }
@@ -84,13 +88,13 @@ const Buscador = () => {
             />
           ))}
           <h2>Repositories</h2>
-          {repoResults.map((item) => (
+          {/* {repoResults.map((item) => (
             <RepoItem
               key={item.id}
               item={item}
               onClick={() => setSelectedItem(item)}
             />
-          ))}
+          ))} */}
         </div>
         {!!selectedItem && (
           <div className="details">

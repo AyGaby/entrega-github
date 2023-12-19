@@ -16,7 +16,7 @@ const Home = () => {
           <img src={logo} alt="Logo" />
 
           <h1>WELCOME TO GITHUB SEARCH</h1>
-          <button onClick={NavBuscador}>GO!</button>
+          <button onClick={NavBuscador}>GO ▶</button>
         </div>
       </div>
     </div>
