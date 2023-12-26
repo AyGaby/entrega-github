@@ -51,7 +51,7 @@ const Guardados = () => {
             </li>
           ))}
         </ul>
-        <Link to="/Buscador">Volver a la Búsqueda</Link>
+        <Link to="/Buscador">◀ Keep Searching</Link>
       </div>
     </div>
   );

@@ -17,6 +17,15 @@ body {
 
 a {
   display: table-column;
+  font-family: "Poppins", sans-serif;
+  color: #36acd0;
+  -webkit-text-stroke: rgb(252 252 252);
+  -webkit-text-stroke-width: 0.7px;
+  text-shadow: 6px 5px 10px;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-decoration: overline;
 }
 
 .botones-navegadores {

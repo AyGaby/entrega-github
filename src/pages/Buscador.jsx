@@ -5,7 +5,7 @@ import RepoItem from "../components/RepoItem";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Guardados from "./Guardados";
+// import Guardados from "./Guardados";
 
 const API_BASE_URL = "http://localhost:3000/api/v1";
 const GIT_API_URL = "https://api.github.com";
