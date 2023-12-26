@@ -82,7 +82,7 @@ const Buscador = () => {
     navigate("/");
   };
 
-  const GuardadosSave = () => {
+  const Guardados = () => {
     navigate("/Guardados");
   };
 
@@ -91,7 +91,7 @@ const Buscador = () => {
       <div className="botones-navegadores">
         <button onClick={NavHome}>◀ HOME</button>
         <div>
-          <button onClick={GuardadosSave}>SAVED ▶</button>
+          <button onClick={Guardados}>SAVED ▶</button>
           <Link to="/Guardados">Guardados</Link>
         </div>
       </div>
