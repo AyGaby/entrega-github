@@ -17,6 +17,7 @@ const Home = () => {
 
           <h1>WELCOME TO GITHUB SEARCH</h1>
           <button onClick={NavBuscador}>GO ▶</button>
+          {/* <button onClick={Saved}> SAVED ▶</button> */}
         </div>
       </div>
     </div>

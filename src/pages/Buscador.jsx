@@ -4,6 +4,8 @@ import UserItem from "../components/UserItem";
 import RepoItem from "../components/RepoItem";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import Guardados from "./Guardados";
 
 const API_BASE_URL = "http://localhost:3000/api/v1";
 const GIT_API_URL = "https://api.github.com";
@@ -80,10 +82,18 @@ const Buscador = () => {
     navigate("/");
   };
 
+  const GuardadosSave = () => {
+    navigate("/Guardados");
+  };
+
   return (
     <div>
-      <div>
+      <div className="botones-navegadores">
         <button onClick={NavHome}>◀ HOME</button>
+        <div>
+          <button onClick={GuardadosSave}>SAVED ▶</button>
+          <Link to="/Guardados">Guardados</Link>
+        </div>
       </div>
       <div className="App">
         <div className="form-container">
