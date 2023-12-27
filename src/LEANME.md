@@ -1,41 +1,51 @@
-# GitHub Search App
+# GitHub Search App - Entregable: Backend
 
-Esta aplicación web permite a los usuarios buscar perfiles de usuarios y repositorios en GitHub. Utiliza la API de GitHub para recuperar datos en tiempo real y mostrarlos a los usuarios.
+## Configuración Inicial del Backend
 
----
+Este proyecto incluye un backend desarrollado en Node.js con Express. Se utiliza Mongoose para la conexión con MongoDB, y la estructura del proyecto está organizada en directorios para modelos, rutas, controladores, etc.
 
-# Tecnologías Utilizadas
+## Modelo de Datos
 
-- React: La aplicación está construida utilizando React, una popular biblioteca de JavaScript para construir interfaces de usuario.
+Se ha creado un modelo denominado "Search" para almacenar los datos de las búsquedas realizadas en GitHub.
 
-- GitHub API: La aplicación utiliza la API pública de GitHub para recuperar datos sobre usuarios y repositorios.
+## Rutas y Controladores
 
-- Estilos: Los estilos están definidos en archivos CSS, lo que permite un diseño limpio y fácilmente personalizable.
+Se han implementado rutas CRUD para el modelo "Search", y la lógica de estas rutas se encuentra separada en controladores.
 
-# Reporte de Problemas y Soluciones
+## Colección de Postman
 
-## !!Problema:
+Se proporciona una colección de Postman que incluye todas las rutas CRUD para facilitar la prueba y comprensión del funcionamiento del backend.
 
-Al intentar realizar el push de mi aplicación, me encontré con un error persistente que provocaba un navegador en blanco y una serie de mensajes de error en la consola:
+## Puntos Extras (Opcional)
 
-```
-App.jsx:42 Error fetching data: Error: GitHub API request failed: at fetchData (App.jsx:26:13) at async handleSearch (App.jsx:36:24)
-```
+Como parte de las mejoras opcionales, se ha implementado autenticación JWT, un manejo centralizado de errores.
 
-## Investigación:
+# Integración y Entrega del Proyecto Final
 
-Tras investigar en línea y consultar con el Profesor Roberto, identifiqué que el problema estaba relacionado con el Token de GitHub.
+## Modificación del Frontend
 
-## Solución Temporal:
+Para completar el proyecto final, se ha ajustado el frontend existente para que las búsquedas se comuniquen con el backend recién desarrollado. Ahora, los datos se almacenan en la base de datos.
 
-Remover el Token.
+Adicionalmente, se ha agregado la funcionalidad de visualización del historial de búsquedas y resultados, y se han modificado o añadido componentes para probar las operaciones CRUD.
 
-## Agradecimientos:
+## Pruebas del Proyecto Integrado
 
-Agradezco su comprensión y apoyo durante este proceso. Estoy dispuesto a colaborar y aprender más sobre cómo abordar este problema de manera efectiva para futuros proyectos.
+Se han llevado a cabo pruebas exhaustivas para verificar que el frontend y el backend trabajen conjuntamente sin problemas. Se han probado las funciones para guardar y borrar desde el frontend para asegurar un funcionamiento adecuado.
 
-¡Gracias por su tiempo y consideración!
+## Entrega del Proyecto Final
 
----
+El código completo, se encuentra disponible en un repositorio público de GitHub.
 
-[Link al video para ver la app en funcionamiento 🖱](https://youtu.be/_9GUzAnGHH4)
+**El Front end en el de Gabriela Bueno: https://github.com/AyGaby/entrega-github**
+
+**El Back end En el de Guilliana Parentelli: https://github.com/gparentelli/Entregable-backend**
+
+Además, se comparte el enlace a la colección de Postman correspondiente al backend para facilitar la comprensión y prueba de las APIs.
+
+## Nota Importante
+
+Al compartir el proyecto, se ha tenido especial cuidado de no incluir datos sensibles ni credenciales de acceso. Todos los valores sensibles se manejan de forma segura utilizando variables de entorno.
+
+**Por otra parte dejo el link de un video que muestra en YouTube, la app en funcionamento: 🖱 https://youtu.be/oxKg4bOsaLc**
+
+¡Agradezco su tiempo y consideración! Si hay alguna pregunta o comentario, estoy disponible para colaborar y aprender más en futuros proyectos.
